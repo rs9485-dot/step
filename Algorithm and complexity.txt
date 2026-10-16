@@ -1,0 +1,11 @@
+Algorithm
+1. Start.
+2. Initialize highest and second to -1.
+3. Visit each score once.
+4. If the score is greater than highest, update both variables.
+5. Otherwise, if it is smaller than highest but greater than second, update second.
+6. Return second.
+Complexity
+- Time: \(O(n)\) — each score is checked once.
+- Additional space: \(O(1)\) — only two variables are used.
+- Compared with sorting: Sorting takes \(O(n\log n)\) time and may require additional space, depending on the sorting algorithm. The single-pass solution is faster and follows the instruction not to sort the array.
