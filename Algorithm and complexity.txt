@@ -1,0 +1,11 @@
+Algorithm
+1. Start.
+2. Find the number of names, n.
+3. Calculate k % n to remove complete rotations.
+4. Move each name to index (i + k) % n in a new array.
+5. Display the rotated roster.
+6. Stop.
+Complexity
+- Time complexity: \(O(n)\) — each name is processed once.
+- Additional space: \(O(n)\) — a new array stores the rotated roster.
+- Why rotating one place at a time is slow: It can take \(O(n \times k)\) time. When k is very large, this performs many unnecessary rotations. Using k % n removes complete rotations first.
