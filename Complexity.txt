@@ -1,0 +1,4 @@
+Complexity
+- Time: \(O(n)\) — visits each day once.
+- Additional space: \(O(1)\) — uses only a few variables.
+- Single pass: Yes, both answers are calculated in one loop.
