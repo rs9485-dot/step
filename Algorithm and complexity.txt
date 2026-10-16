@@ -1,0 +1,9 @@
+Algorithm
+1. Find the first position where the score is greater than or equal to low.
+2. Find the first position where the score is greater than high.
+3. Subtract the first position from the second position.
+4. Return the count.
+Complexity
+- Linear scan: Time \(O(n)\), additional space \(O(1)\).
+- Binary search solution: Time \(O(\log n)\), additional space \(O(1)\).
+- Why duplicates matter: We must find the first matching boundary positions, not just any matching score. This ensures every duplicate within the inclusive band is counted correctly.
