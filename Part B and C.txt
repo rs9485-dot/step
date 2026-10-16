@@ -1,0 +1,95 @@
+1. D — == compares object references, while equals() compares string contents.
+2. B — baL avaJ, because reverse() reverses the entire string.
+3. B — Student(String name) is directly called and delegates to the two-parameter constructor.
+4. D — Both references point to the same wallet, so both show 700.
+5. C — The shared static counter becomes 3.
+6. A — The array elements print in their original order.
+7. B — continue skips printing 3, so the output is 1 2 4 5.
+8. A — The original variable x remains 5 because Java passes a copy of its value.
+9. C — The result is 83.33333333333333 because division involves a double.
+10. B — The card adds a 2% fee, making the payment 510.0.
+11. B — Strings are immutable, so name remains "java" and upperName refers to "JAVA".
+12. B — Two String objects: one pooled string and one created by new String().
+13. A — The length is 6, and the character at index 2 is m.
+14. A — The @ symbol is at index 4.
+15. B — The constructor initializes the title to "Unknown" and price to 0.0.
+16. A — The parameterized constructor initializes the title and price with the given values.
+17. B — Two Wallet objects exist; w1 and w2 share one object, while w3 refers to another.
+18. C — Both references show a balance of 700.
+19. C — s1 becomes "Anu", while s2 remains "Ravi".
+20. C — Three objects are created, so the shared visitor count is 3.
+Part C — Concept Questions
+Question 1: String Immutability
+String immutability means that a String object's value cannot be changed after creation. Repeated modifications create new String objects, which can consume additional memory and time. This can be avoided by using StringBuilder, which allows modifications to the same mutable object.
+Question 2: Use of the this Keyword
+The this keyword refers to the current object. It distinguishes an instance variable from a constructor parameter when both have the same name.
+Example:
+class Student {
+    String name;
+
+    Student(String name) {
+        this.name = name;
+    }
+}
+
+
+Here, this.name refers to the instance variable, while name refers to the constructor parameter.
+Question 3: Object vs Reference Variable
+An object is an instance of a class that occupies memory and stores data. A reference variable stores a reference to that object.
+When one reference is assigned to another, both can refer to the same object. Changes made through either reference affect that shared object.
+Example: Wallet w2 = w1; makes both references point to the same wallet.
+Question 4: Static Variables vs Instance Variables
+A static variable belongs to the class and is shared by all objects. An instance variable belongs to an individual object, so each object has its own value.
+For example, a Visitor class can use a static variable to count all visitors. Each visitor's name should be an instance variable because every visitor has a different name.
+Question 5: For, While and Do-While Loops
+- For loop: Used when the number of repetitions is known, such as printing numbers from 1 to 10.
+- While loop: Used when repetition depends on a condition, such as reading numbers until the user enters zero.
+- Do-while loop: Executes at least once because the condition is checked after the loop body. It is useful for displaying a menu at least once.
+Question 6: Pass-by-Value in Java
+Java always uses pass-by-value, meaning a method receives a copy of the argument's value.
+For primitive types, changing the parameter does not change the original variable. For objects, the copied reference can access and modify the same object, but reassigning the parameter does not change the caller's reference.
+Question 7: Integer Division in Java
+When two integers are divided, Java discards the fractional part of the result.
+For example, 5 / 2 produces 2. To obtain a floating-point result, at least one operand must be converted to a floating-point type.
+double result = (double) 5 / 2;
+
+
+The result is 2.5.
+Question 8: Encapsulation
+Encapsulation combines data and methods in a class while restricting direct access to its internal data. Java uses access modifiers such as private to protect fields and getters and setters to provide controlled access.
+For example, a bank account can keep its balance private and allow withdrawals only when sufficient funds are available. This helps maintain data integrity.
+Question 9: == vs equals()
+The == operator compares object references, checking whether they point to the same object. The equals() method compares objects according to their equality rules.
+For example:
+String s1 = new String("Java");
+String s2 = new String("Java");
+
+System.out.println(s1 == s2);      // false
+System.out.println(s1.equals(s2)); // true
+
+
+The two objects are different, but their contents are equal. Overriding equals() lets a class define equality based on its fields rather than object identity.
+Question 10: Method Overloading vs Method Overriding
+Method overloading means defining multiple methods with the same name but different parameter lists in the same class. It is resolved at compile time.
+Example:
+void add(int a, int b) { }
+void add(double a, double b) { }
+
+
+Method overriding occurs when a subclass provides its own implementation of an inherited method with the same signature. The implementation is selected at runtime based on the actual object.
+Example:
+class Animal {
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Bark");
+    }
+}
+
+
+Calling sound() on an Animal reference pointing to a Dog object prints Bark. This demonstrates runtime polymorphism.
