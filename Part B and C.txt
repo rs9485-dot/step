@@ -1,0 +1,28 @@
+Q1. C — Abstraction hides internal implementation details and shows only the necessary operations to the user.
+Q2. C — An abstract class cannot be instantiated directly. We must create an object of a concrete subclass.
+Q3. B — A concrete subclass must implement all inherited abstract methods. Otherwise, it must also be declared abstract.
+Q4. C — An abstract method cannot be private because subclasses must be able to access and override it.
+Q5. C — Interface fields are implicitly public, static, and final, meaning they are accessible constants.
+Q6. C — A Java class can implement any number of interfaces, allowing it to follow multiple contracts.
+Q7. D — Implemented interface methods must be public because interface methods are public by default.
+Q8. C — Interfaces allow multiple inheritance of type without inheriting instance fields from multiple classes. This helps avoid common diamond-problem ambiguities, although default methods can still create conflicts.
+Q9. D — If two interfaces provide conflicting default methods, the implementing class must override the method to resolve the conflict.
+Q10. B — An abstract class can have a constructor. It runs when a subclass object is created, initializing the inherited fields.
+Part C — Descriptive Questions
+Question 1: Explain abstraction with a real-life example.
+Abstraction means showing only the necessary features and hiding the internal working details.
+For example, in a washing machine, the user selects a washing mode and presses the start button. The machine handles water levels, motor speed, and washing time internally. The user does not need to understand these processes to operate it.
+Question 2: Difference between abstraction and encapsulation.
+Abstraction hides implementation details and focuses on what an object does. Encapsulation combines data and methods in a class and restricts direct access to data using access modifiers.
+For example, a bank account class can provide a withdraw() method as abstraction, while keeping the balance private is encapsulation. Together, they make the program easier to use and help protect data.
+Question 3: Why does an abstract class have a constructor?
+An abstract class has a constructor to initialize common fields shared by its subclasses. Although we cannot create an object of the abstract class directly, its constructor executes when a subclass object is created.
+For example, an abstract Employee class can initialize an employee's name, which is then used by Manager or Developer objects.
+Question 4: Why cannot an abstract method be private, static, or final?
+- Private: A private method cannot be accessed or overridden by subclasses, but an abstract method must be implemented by a subclass.
+- Static: A static method belongs to the class rather than an object and cannot be overridden through runtime polymorphism.
+- Final: A final method cannot be overridden, so a subclass cannot provide the required implementation of an abstract method.
+Therefore, an abstract method cannot use any of these three modifiers.
+Question 5: Explain the diamond problem and how Java avoids it.
+The diamond problem occurs when a class inherits the same method or data through two different parent classes, creating ambiguity about which implementation should be used.
+Java avoids this problem by allowing a class to extend only one class but implement multiple interfaces. If two interfaces provide conflicting default methods, the class must override the method and specify the required implementation. This resolves the ambiguity.
