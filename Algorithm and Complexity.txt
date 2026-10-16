@@ -1,0 +1,11 @@
+Algorithm
+1. Start.
+2. Set the maximum total to -1.
+3. Visit each row and calculate its total.
+4. If the total is greater than the maximum, update the maximum and row index.
+5. Display the row index and its total.
+6. Stop.
+Complexity
+- Time complexity: \(O(r \times c)\), because every element is visited once.
+- Additional space: \(O(1)\), because only a few variables are used, excluding the input grid.
+Note: Row indexing starts from 0, so Row 1 is the second row. Ties are handled by using > instead of >=, which keeps the smaller row index.
